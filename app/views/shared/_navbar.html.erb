@@ -1,0 +1,17 @@
+<header class="container-fluid">
+        <nav>
+            <ul>
+                <li>
+                  <%= link_to "Content Master", root_path, class: "contrast" %>
+                </li>
+            </ul>
+
+            <ul>
+              <% if authenticated? %>
+                <%= link_to "Log Out", session_path, data: { turbo_method: :delete } %>
+              <% else %>
+                <li><a href="/login" class="secondary">Login</a></li>
+              <% end %>
+            </ul>
+        </nav>
+    </header>
